@@ -307,7 +307,7 @@ main p {
 #hero-homepage {
     display: flex;
     align-items:end;
-    background-image: url('/assets/Home\ Page/Hero Section.jpg');
+    background-image: url('assets/Home\ Page/Hero Section.jpg');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -443,7 +443,7 @@ span {
 #contact {
     display: flex;
     align-items:end;
-    background-image: url('/assets/Home\ Page/contact-hero.webp');
+    background-image: url('assets/Home\ Page/contact-hero.webp');
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -588,7 +588,7 @@ span {
 /* About Page */
 /* About hero */
 #hero-about {
-    background-image: url('/assets/About\ Page/female-engineers-working.jpg');
+    background-image: url('assets/About\ Page/female-engineers-working.jpg');
     height: 50vh;
     border-radius: 50px;
     background-size: cover;
@@ -708,7 +708,7 @@ span {
 /* About-Clients */
 /* hero clients */
 #hero-clients {
-    background-image: url('/assets/Clients\ Page/cytonn-photography-vWchRczcQwM-unsplash.jpg');
+    background-image: url('assets/Clients\ Page/cytonn-photography-vWchRczcQwM-unsplash.jpg');
     height: 50vh;
     border-radius: 50px;
     background-size: cover;
@@ -841,7 +841,7 @@ span {
 
 /* About-Clients */
 #hero-career {
-    background-image: url('/assets/About\ Page/0ad323ed8f1a65ad3afb5e31dc822b06ffe78cc1.jpg');
+    background-image: url('assets/About\ Page/0ad323ed8f1a65ad3afb5e31dc822b06ffe78cc1.jpg');
     height: 50vh;
     border-radius: 50px;
     background-size: cover;
@@ -965,7 +965,7 @@ span {
 /* Services page */
 /* hero-service */
 #hero-service {
-    background-image: url('/assets/Services\ Page/markus-spiske-rNn_TU8dvoY-unsplash (1).jpg');
+    background-image: url('assets/Services\ Page/markus-spiske-rNn_TU8dvoY-unsplash (1).jpg');
     height: 50vh;
     border-radius: 50px;
     background-size: cover;
@@ -1115,7 +1115,7 @@ span {
 /* Gallery */
 /* galler hero */
 #hero-gallery {
-    background-image: url('/assets/Other\ Pages/Gallery hero-scetion.jpg');
+    background-image: url('assets/Other\ Pages/Gallery hero-scetion.jpg');
     height: 50vh;
     border-radius: 50px;
     background-size: cover;
@@ -1154,7 +1154,7 @@ span {
 /* Contact page */
 /* hero-Contact */
 #hero-Contact {
-    background-image: url('/assets/Other\ Pages/ricardo-gomez-angel-MagdWoazARo-unsplash.jpg');
+    background-image: url('assets/Other\ Pages/ricardo-gomez-angel-MagdWoazARo-unsplash.jpg');
     height: 50vh;
     border-radius: 50px;
     background-size: cover;
