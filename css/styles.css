@@ -1,0 +1,2185 @@
+html{
+    scroll-behavior: smooth;
+}
+
+.img-card {
+    width: 511px;
+    height: 524px;
+    top: 913px;
+    left: 122px;
+    border-radius: 35px;
+    object-fit:cover
+}
+
+.service-card {
+    width: 381px;
+    height: 290px;
+    border-radius: 35px;
+    object-fit: cover;
+}
+
+.contact-img {
+    width: 1168px;
+    height: 470px;
+    top: 2845px;
+    left: 120px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+.gallery-img {
+    width: 381px;
+    height: 330px;
+    border-radius: 35px;
+    object-fit: cover;
+}
+
+/* Base styles */
+:root {
+    --primary: #3275FC;
+    --primary-light: #3275FC1F;
+    --white: #fff;
+    --dark: #000;
+    --font: 'Inter', sans-serif;
+    --font-color: #B4B4B4;
+    --hover-color: #0056b3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+    scroll-behavior: smooth;
+}
+
+button {
+    border-style: none;
+    width: 137px;
+    height: 55px;
+    left: 644px;
+    border-radius: 35px;
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    color: var(--white);
+    border-width: 8px;
+    border-color: var(--primary);
+    transition: 0.2s ease, color 0.2s ease;
+}
+
+/* Typography */
+
+h1 {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+h2, h3, h4 {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+}
+
+p, li, button {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+}
+
+p {
+    color: var(--font-color);
+}
+
+li {
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    color: var(--font-color);
+    padding-bottom: 1rem;
+}
+
+li svg {
+    width: 20px;
+    height: 20px;
+    vertical-align: top; /* Align icon with text */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+#title-question {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--primary);
+}
+
+
+/* Nav bar */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    z-index: 1000; /* Ensure it stays above other content */
+}
+
+.logo {
+    width: 120px;
+    margin: 9px 15px;
+    display: inline-block;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+}
+
+/* Main Menu List */
+.main-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Main Menu List Items */
+.main-menu > li {
+    position: relative; /* Crucial for positioning the dropdown-menu */
+    margin: 0 10px;
+}
+
+/* Main Menu Links & Dropdown Toggles */
+.main-menu a {
+    color: var(--dark); /* Light gray text */
+    text-decoration: none;
+    padding: 12px 18px;
+    display: flex; /* For aligning text and icon */
+    align-items: center; /* Vertically center items */
+    font-weight: 400;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-menu a:hover,
+.main-menu a:focus { /* Add focus for keyboard navigation */
+    color: var(--primary);
+}
+
+/* SVG Icon Styling */
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    transition: transform 0.3s ease; /* Smooth arrow rotation */
+    width: 0.8em; /* Slightly smaller than font size */
+    height: 0.8em;
+}
+
+.icon-arrow-down {
+    margin-left: 8px; /* Spacing between text and arrow */
+    fill: currentColor; /* Inherit color from parent text */
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%; /* Position right below the parent menu item */
+    left: 0;
+    background-color: var(--white); /* Match hover color for consistency */
+    min-width: 180px;
+    border-radius: 6px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensure it's above other content */
+
+    /* Hide by default using opacity and visibility for smooth transitions */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px); /* Start slightly below */
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-menu li {
+    padding-bottom: 0;
+}
+
+.dropdown-menu li a {
+    color: var(--dark);
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block; /* Make links fill their space */
+    text-align: left;
+    white-space: nowrap; /* Prevent text wrapping in dropdown */
+    font-weight: 400;
+    border-radius: 0; /* No individual border-radius for dropdown items */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu li:first-child a {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.dropdown-menu li:last-child a {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus {
+    color: var(--primary);
+}
+
+/* CSS for when dropdown is open (JS will add .is-open class) */
+.has-dropdown.is-open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Move to original position */
+}
+
+/* Rotate arrow when dropdown is open */
+.has-dropdown.is-open .dropdown-toggle .icon-arrow-down {
+    transform: rotate(180deg);
+}
+
+/* Show dropdown on hover */
+.has-dropdown:hover .dropdown-menu,
+.has-dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-arrow {
+    margin-left: 6px;
+    vertical-align: middle;
+    transition: transform 0.2s;
+}
+.has-dropdown.open > a .dropdown-arrow {
+    transform: rotate(180deg); /* If you want to rotate when open */
+}
+
+.hamburger {
+    display: none; /* Hidden by default, shown on smaller screens */
+}
+
+#about-page-link {
+    display: none; /* Hide the About Page link */
+}
+
+#service-page-link {
+    display: none; /* Hide the Services Page link */
+}
+
+/* Main */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20vh;
+    padding: 9rem;
+}
+
+main p {
+    line-height: 1.5rem;
+}
+
+/* Homepage */
+/* Hero */
+.hero-home-img {
+    width: 100%;
+    padding: 4rem;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+#hero-homepage {
+    display: flex;
+    align-items:end;
+    background-image: url('/assets/Home\ Page/Hero Section.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 70vh;
+    border-radius: 50px;
+    object-fit: cover;
+    padding-left: 3rem;
+    padding-bottom: 3rem
+}
+
+#hero-homepage p {
+    color: var(--dark);
+}
+
+/* Style only the second button in #hero-homepage */
+#sec-btn {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+#sec-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+#hero-homepage h1,
+#hero-homepage p {
+    padding-bottom: 2rem;
+}
+
+#hero-homepage h1 {
+    line-height: 3rem;
+}
+
+#hero-homepage p {
+    line-height: 1.5rem;
+}
+
+#sec-btn {
+    margin-left: 1.5rem; /* Adjust the value as needed for your design */
+}
+
+.hero-homepage-btn {
+    padding-top: 1.5rem;
+}
+
+/* About */
+#about-homepage {
+    display: flex;
+    align-items: center;
+    height: 500px; /* or any value that fits your design */
+    gap: 9rem;
+}
+
+.about-homepage-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Ensure it takes full height of parent if needed */
+}
+
+.title p {
+    padding-bottom: 1rem;
+    color: var(--primary);
+    font-size: 16px;
+}
+
+span {
+    color: var(--primary);
+}
+
+/* Services Homepage */
+#services-homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+}
+
+#services-homepage .title p {
+    text-align: center;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center; /* Center the service cards */
+    flex-wrap: wrap;
+    gap: 2rem; /* Space between cards */
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white); /* Card background color */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08); /* Bigger and lighter shadow */
+    border-radius: 40px; /* Rounded corners */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+    width: 381px; /* Fixed width for service cards */
+}
+
+.services:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25); /* Bigger and deeper shadow on hover */
+}
+
+.services h3 {
+    padding: 1rem;
+    font-size: 24px;
+    color: var(--dark);
+}
+
+.services p {
+    padding: 0 1rem 2rem;
+    color: var(--font-color);
+    line-height: 1.5rem;
+}
+
+.services a {
+    text-decoration: none;
+    color: var(--primary);
+    padding: 0 1rem 2rem;
+    font-weight: 400;
+}
+
+.services a:hover {
+    color: var(--hover-color);
+}
+
+/* Contact */
+#contact {
+    display: flex;
+    align-items:end;
+    background-image: url('/assets/Home\ Page/contact-hero.webp');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 70vh;
+    border-radius: 50px;
+    object-fit: cover;
+    padding-left: 3rem;
+    padding-bottom: 3rem
+}
+
+#contact h3 {
+    color: var(--white);
+    padding-bottom: 3rem;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 2.5rem;
+}
+
+/* Gallery */
+#gallery-homepage { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;    
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center; /* Center the service cards */
+    gap: 3rem; /* Space between cards */
+}
+
+.gallery-container img {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white); /* Card background color */
+    box-shadow: 0 7px 11px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 40px; /* Rounded corners */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+    width: 381px; /* Fixed width for service cards */
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    
+}
+
+/* Review */
+.review-container {
+    display: flex;
+    gap: 8rem;
+}
+
+.review-container img {
+    height: 80%;
+    padding-top: 1rem;
+}
+
+.review-container h2 {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding-bottom: 2rem;
+    line-height: 2.2rem;
+
+}
+
+.review-container h3 {
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding-bottom: 2rem;
+
+}
+
+.review-container p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding-bottom: 2rem;
+    line-height: 1.55rem;
+
+}
+
+.review-container li {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+
+.extra {
+    display: flex;
+    margin-top: 4rem;
+    align-items: center;
+    align-self: center;
+    gap: 0.7rem;
+}
+
+.extra h4 {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding-top: 1.9rem;
+    padding-bottom: 1.5rem;
+}
+
+.extra p {
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.extra div {
+    background-color: #D9D9D9;
+    width: 179px;
+    height: 166px;
+    border-radius: 10px;
+
+}
+
+.letters {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all child elements horizontally */
+    justify-content: start; /* Optional: centers vertically if you set a height */
+    height: 100%; /* Optional: ensures vertical centering if parent has fixed height */
+    text-align: center; /* Ensures text inside <p> is centered */
+}
+
+
+
+/* About Page */
+/* About hero */
+#hero-about {
+    background-image: url('/assets/About\ Page/female-engineers-working.jpg');
+    height: 50vh;
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+/* About about */
+#about-about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+}
+
+#about-about .container {
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center; /* Center vertically */
+    gap: 9rem; /* Space between the two columns */
+}
+
+#about-about .title p {
+    text-align: center;
+}
+
+/* Certificates */
+#certificates {
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+}
+
+#certificates ul {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+/* Make certificate list items align icon and text horizontally and keep SVGs a consistent size */
+#certificates li {
+    display: flex;
+    align-items: start;
+}
+
+/* Force SVG icons to a fixed size so they don't scale with the ul width */
+#certificates li svg {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px; /* Prevent shrinking or growing */
+    min-width: 20px;
+    min-height: 20px;
+}
+
+
+
+/* vision-mission-values  */
+#vision-mission-values .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+#vision-mission-values .container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 381px;
+    height: 412px;
+    border-radius: 35px;
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.10); /* Bigger and lighter shadow */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+#vision-mission-values .container div p {
+    padding: 1rem;
+    color: var(--font-color);
+    text-align: center;
+}
+
+#vision-mission-values .container div:nth-child(2) {
+    background-color: #3275FC;
+    box-shadow: 0 32px 64px rgba(0, 0, 0, 0.10); /* Bigger and lighter shadow */
+}
+
+#vision-mission-values .container div:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18); /* Deeper shadow on hover */
+}
+
+#vision-mission-values .container div p{
+    padding-top: 2.5rem;
+}
+
+#vision-mission-values .container div h3{
+    font-size: 30px;
+    padding-top: 1rem;
+}
+
+#vision-mission-values .container div:nth-child(2) p, 
+#vision-mission-values .container div:nth-child(2) h3 {
+    color: var(--white);
+}
+
+#Layer_1 {
+    fill: var(--primary);
+}
+
+/* About-Clients */
+/* hero clients */
+#hero-clients {
+    background-image: url('/assets/Clients\ Page/cytonn-photography-vWchRczcQwM-unsplash.jpg');
+    height: 50vh;
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+/* Clients */
+#our-clients{
+    display: flex;
+    gap: 6rem;
+}
+
+#our-clients p {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 100%;
+    padding-bottom: 4rem;
+}
+
+#our-clients a {
+    text-decoration: none;
+
+}
+
+#our-clients li:hover,
+#our-clients li:focus {
+    color: var(--primary); /* use existing primary color on hover */
+    transform: translateY(-2px); /* small lift */
+    outline: none;
+}
+
+
+
+#our-clients h2 {
+    padding-bottom: 3rem;
+}
+
+#our-clients h3 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    padding-bottom: 2rem;
+}
+
+
+
+/* other-clients */
+#other-clients {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+}
+
+.logo-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows logos to wrap to the next line */
+    justify-content: center; /* Center logos horizontally */
+    gap: 2rem; /* Space between logos */
+}
+
+.client-logo {
+    width: 283px; /* Fixed width for logos */
+    height: 202px; /* Maintain aspect ratio */
+    border-radius: 35px; /* Rounded corners for logos */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+    cursor: pointer;
+}
+
+.client-logo img {
+    width: 100%; /* Ensures the image fills the container */
+    height: 100%; /* Ensures the image fills the container */
+    border-radius: 35px; /* Match the container's border radius */
+    object-fit: contain; /* Maintain aspect ratio of logos */
+}
+
+.client-logo img:last-child {
+    padding: 1.5rem; /* Add padding to the last logo */ 
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+.client-logo:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+    transform: translateY(-5px); /* Slightly lift the logo on hover */
+}
+
+/* Projects */
+.project-hero {
+    width: 100%;
+    height: 567px;
+    border-radius: 35px;
+    object-fit: cover;
+    display: block; /* Ensures the image is a block element */
+}
+
+#projects > div {
+    width: 100%;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+}   
+
+#projects h3 {
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    font-size: 30px;
+}
+
+#projects li {
+    list-style: disc inside;
+    display: list-item;
+    color: var(--font-color);
+    font-size: 20px;
+    line-height: 1.5;
+    padding-bottom: 1rem;
+    text-align: left;
+    margin-left: 1.5em;
+    width: 90%;
+}
+
+/* About-Clients */
+#hero-career {
+    background-image: url('/assets/About\ Page/0ad323ed8f1a65ad3afb5e31dc822b06ffe78cc1.jpg');
+    height: 50vh;
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+#career-form {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+
+#career-form h2 {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: -2%;    
+    padding-bottom: 1.5rem;
+    max-width: 60%;
+}
+
+#career-form p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    padding-bottom: 2rem;
+    color: var(--dark);
+    max-width: 55%;
+}
+
+/* Styles for the career application form */
+.career-form {
+    border-radius: 1rem; /* More rounded corners */
+    width: 100%;
+    max-width: 800px; /* Max width for larger screens */
+    display: grid;
+    gap: 1.5rem; /* Increased gap between grid items */
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Default to single column for mobile */
+    margin: auto; /* Centers the form horizontally within its parent */
+}
+
+.career-form div {
+    position: relative; /* Needed for positioning the labeel as a placeholder */
+}
+
+.career-form label {
+    /* Visually hide the label but keep it accessible for screen readers.
+        The placeholder attribute on the input/textarea will serve as the visual label. */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.career-form ::placeholder {
+    color: var(--dark); /* Darker placeholder text */
+}
+
+.career-form input[type="text"],
+.career-form input[type="email"],
+.career-form input[type="tel"],
+.career-form textarea {
+    width: 100%;
+    padding: 1rem 1.25rem; /* Larger padding for inputs */
+    border: 1px solid var(--dark); /* Dark border for inputs */
+    border-radius: 0.625rem; /* Slightly more rounded inputs */
+    font-size: 1rem;
+    color: #334155; /* Darker text color */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    outline: none; /* Remove default browser outline */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.career-form input[type="text"]:focus,
+.career-form input[type="email"]:focus,
+.career-form input[type="tel"]:focus,
+.career-form textarea:focus {
+    border-color: #3b82f6; /* Blue border on focus */
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25); /* Light blue shadow on focus */
+}
+
+.career-form textarea {
+    min-height: 120px; /* Increased minimum height for the cover letter field */
+    resize: vertical; /* Allow vertical resizing by the user */
+}
+
+.career-form button[type="submit"] {
+    width: 100%; /* Button takes 100% width of its grid cell */
+    padding: 1rem 1.5rem; /* Larger padding for the button */
+    background-color: var(--primary); /* Stronger blue background */
+    color: var(--dark); /* White text color */
+    border: none; /* No border */
+    border-radius: 0.625rem; /* Rounded button corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1.125rem; /* Larger font size */
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out; /* Smooth transitions for hover effects */
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3); /* Subtle button shadow */
+}
+
+.career-form button[type="submit"]:hover {
+    background-color: #1d4ed8; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.career-form button[type="submit"]:active {
+    transform: translateY(0); /* Reset position on click */
+    box-shadow: 0 2px 5px rgba(37, 99, 235, 0.3); /* Smaller shadow on active state */
+}
+
+/* Services page */
+/* hero-service */
+#hero-service {
+    background-image: url('/assets/Services\ Page/markus-spiske-rNn_TU8dvoY-unsplash (1).jpg');
+    height: 50vh;
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+/* About services */ 
+#about-services {
+    display: flex;
+    /* align-items: center; */
+    gap: 9rem;
+}
+
+#about-services .text-card {
+    display: flex;
+    flex-direction: column;
+    /* padding-top: 3rem; */
+    padding-bottom: 3rem;
+    gap: 3rem;
+}
+
+#about-services p {
+    line-height: 1.7rem;
+    padding-bottom: 2rem;
+}
+
+/* Services Homepage */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto);   /* 2 rows */
+    column-gap: 2rem;                      /* 1rem gap between columns */
+    row-gap: 5rem;                         /* 4rem gap between rows */
+}
+
+/* Engineering Design */
+#engineering-design {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    padding-top: 3rem;
+}
+
+#engineering-design .text-card {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    height: 100%; /* Ensure it takes full height of parent if needed */
+}
+
+#engineering-design .text-card h2{
+    padding-bottom: 1rem;
+}
+
+/* Procurement */
+#procurement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+}
+
+#procurement .container {
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center; /* Center vertically */
+    gap: 9rem; /* Space between the two columns */
+}
+
+#procurement h2 {
+    padding-bottom: 4rem;
+}
+
+#procurement .p {
+    padding-bottom: 2rem;
+    width: 90%;
+}
+
+/* technical-manpower */
+#technical-manpower {
+    display: flex;
+    gap: 6rem;
+    padding-top: 3rem;
+}
+
+#technical-manpower h2{
+    padding-bottom: 2.5rem;
+}
+
+/* Project management */
+#construction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+    padding-top: 3rem;
+}
+
+#construction .container {
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center; /* Center vertically */
+    gap: 6rem; /* Space between the two columns */
+}
+
+#construction h2 {
+    padding-bottom: 4rem;
+}
+
+/* As-built */
+#as-built {
+    display: flex;
+    gap: 6rem;
+    padding-top: 3rem;
+}
+
+#as-built h2 {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+/* Insallation */
+#installation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+    padding-top: 3rem;
+}
+
+#installation .container {
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center; /* Center vertically */
+    gap: 6rem; /* Space between the two columns */
+}
+
+#installation h2 {
+    padding-bottom: 4rem;
+}
+
+/* Gallery */
+/* galler hero */
+#hero-gallery {
+    background-image: url('/assets/Other\ Pages/Gallery hero-scetion.jpg');
+    height: 50vh;
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+/* Gallery pics */
+#gallery-pics {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9rem;    
+}
+
+.gallery-container-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto);   /* 2 rows */
+    column-gap: 2rem;                      /* 1rem gap between columns */
+    row-gap: 5rem;                         /* 4rem gap between rows */
+    padding-bottom: 7rem; /* Add padding to the bottom */
+}
+
+.gallery-container img {
+    width: 381px; /* Fixed width for gallery images */
+    height: 330px;      /* or your preferred fixed height */
+    object-fit: cover;  /* Ensures the image covers the area */
+    border-radius: 35px;
+    display: block;
+}
+
+/* Contact page */
+/* hero-Contact */
+#hero-Contact {
+    background-image: url('/assets/Other\ Pages/ricardo-gomez-angel-MagdWoazARo-unsplash.jpg');
+    height: 50vh;
+    border-radius: 50px;
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+/* contact-info */
+#contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8rem;
+}
+
+#contact-info p {
+    text-align: center;
+}
+
+#contact-info .container {
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center; /* Center vertically */
+    gap: 5rem; /* Space between the two columns */
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 383px;
+    height: 377px;
+    border-radius: 35px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12); /* Subtle shadow for depth */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+    padding-top: 5rem;
+    gap: 1rem;
+}
+
+.contact-details p {
+    color: var(--dark);
+}
+
+.contact-details a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 20px;
+}
+
+.contact-details a:hover {
+    color: var(--primary);
+}
+
+.contact-details:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+}
+
+/* Contact-form */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8rem;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr; /* Only one column */
+    gap: 1.5rem;
+    width: 1103px; /* Fixed width for the form */
+}
+
+.contact-form textarea,
+.contact-form button[type="submit"] {
+    width: 100%;
+    grid-column: span 1; /* Only one column, so span 1 */
+}
+
+.contact-form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact-form label {
+    /* Visually hide the label but keep it accessible for screen readers */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    font-size: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+    /* Remove grid-column spanning */
+}
+
+.contact-form button[type="submit"] {
+    /* Remove grid-column spanning */
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary, #3275FC);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.contact-form button[type="submit"]:hover {
+    background: #2256b3;
+}
+
+/* Remove any grid-column spanning for specific children */
+.contact-form div:nth-child(3) {
+    grid-column: span 1;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-light);
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+footer h3 {
+    font-weight: 400;
+    font-size: 20px;
+
+}
+
+footer p, footer li, footer a {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.05rem;
+    text-decoration: none;
+    color: var(--dark);
+}
+
+footer a:hover {
+    color: var(--primary);
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer li {
+    padding-bottom: 1rem;
+}
+
+.footer-container h3 {
+    white-space: nowrap;
+    padding-bottom: 1.5rem;
+}
+
+/* Make the footer a flex container and space items evenly */
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* or use space-evenly for equal spacing */
+    gap: 2rem; /* Adjust as needed for more/less space between columns */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    padding: 2rem 2rem; /* Add padding for better spacing */
+    padding-bottom: 3rem;
+}
+
+/* Limit width of the first and fourth box paragraphs */
+.footer-logo p,
+.footer-container > div:nth-child(4) p, .footer-container div:nth-child(5) p {
+    max-width: 250px; /* Adjust as needed */
+    word-break: break-word;
+}
+
+.footer-logo p {
+    max-width: 250px;
+    word-break: break-word;
+    text-align: center;
+}
+
+.footer-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.footer-logo .logo {
+    margin-top: 0px;
+}
+
+#copyright {
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 1.5rem 0 0 0;
+}   
+
+#back-to-top {
+    position: fixed;
+    left: auto;
+    right: 20px;
+    bottom: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #3275FC;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    line-height: 1;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity .22s ease, transform .22s ease;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+#back-to-top:focus {
+    outline: 3px solid rgba(50,117,252,0.22);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    #back-to-top { transition: none; }
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* --- RESPONSIVE STYLES --- */
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* Media queries for screens up to 1024px (Tablets and smaller desktops) */
+@media (max-width: 1024px) {
+    main {
+        gap: 20vh;
+        padding: 5rem 4rem;
+        padding-bottom: 9rem;
+        margin-top: 60px;
+    }
+
+    h1, h2, h3, h4 {
+        font-size: 40px;
+    }
+
+    p, li, button {
+        font-size: 20px;
+    }
+
+    /* Navigation */
+    /* Hide the main menu by default on mobile */
+    nav {
+        align-items: center;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    nav button .hamburger:hover {
+        background-color: var(--white);
+        color: var(--white);
+        border-width: 0px;
+        border-color: var(--primary);
+        transition: none;
+    }
+
+    .main-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--white);
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+    }
+
+    /* Show the main menu when the hamburger is active */
+    .main-menu.is-open {
+        display: flex;
+    }
+
+    /* Adjust list item spacing for mobile */
+    .main-menu > li {
+        margin: 0;
+        width: 100%;
+        justify-content: end;
+    }
+    
+    .main-menu a {
+        padding: 15px 20px;
+        justify-content: flex-start;
+    }
+
+    .dropdown-menu {
+        left: auto;
+    }
+
+    /* Hamburger icon styling */
+    .hamburger {
+        width: 30px;
+        height: 25px;
+        padding: 0;
+        z-index: 1001; /* Above the main menu */
+    }
+
+    /* Hide dropdown by default */
+    .has-dropdown .dropdown-menu {
+        display: none;
+    }
+
+    /* Show dropdown when parent has .is-open */
+    .has-dropdown.is-open .dropdown-menu {
+        display: block;
+    }
+
+    #about-page-link,
+    #service-page-link {
+        display: block;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    /* Images */
+    .img-card,
+    .service-card,
+    .contact-img,
+    .gallery-img,
+    .client-logo {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .img-card {
+        height: 524px; /* Adjust height for smaller screens */
+        width: 500px; /* Adjust width for smaller screens */
+    }
+
+    .service-card {
+        width: 381px; /* Adjust width for smaller screens */
+    }
+
+    .gallery-img {
+        height: 330px; /* Adjust height for smaller screens */
+    }
+
+    .map {
+        height: 507px; /* Adjust height for smaller screens */
+        width: 549px; /* Adjust width for smaller screens */
+    }
+
+    .client-logo {
+        height: 290px; /* Adjust height for smaller screens */
+        width: 381px; /* Adjust width for smaller screens */
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Homepage Sections */
+    #hero-homepage,
+    #contact {
+        padding: 2rem;
+        /* text-align: center; */
+    }
+
+    #contact {
+        height: 470px; /* Adjust height for smaller screens */
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap; /* Allow wrapping of content */
+        align-items: center; /* Center content vertically */
+    }
+
+    #contact .container h3 {
+        font-size: 28px;
+        line-height: 1.8rem;
+    }
+
+    #sec-btn {
+        color: var(--white);
+        border: 2px solid var(--white);
+    }
+
+    /* Hero */
+    #hero-homepage {
+        height: 523px;
+        align-items: center;
+    }
+
+    #hero-about,
+    #hero-clients,
+    #hero-career,
+    #hero-service,
+    #hero-gallery,
+    #hero-Contact {
+        height: 279px;
+    }
+
+    #hero-homepage h1,
+    #contact h3 {
+        line-height: 2.5rem;
+        font-size: 32px;
+    }
+
+    #about-homepage {
+        flex-direction: column-reverse;
+        gap: 6rem;
+        height: auto;
+        /* text-align: center; */
+    }
+
+    .about-homepage-text {
+        width: 500px;
+        gap: 2.5rem;
+    }
+
+    #about-homepage .img-card {
+        order: 1;
+    }
+
+    .services-container,
+    .gallery-container,
+    .logo-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .logo-container {
+        gap: 7rem;
+    }
+
+    .gallery-container{
+        gap: 7rem;
+    }
+
+    .services,
+    .gallery-container img,
+    .client-logo, 
+    #certificates ul{
+        width: 100%;
+    }
+
+    #certificates {
+        align-items: center;
+    }
+
+    #certificates ul {
+        align-items: center;
+    }
+
+    #certificates li {
+        width: 500px;
+    }
+
+    .services-container {
+        gap: 5rem;
+    }
+
+    .services {
+        width: 381px;;
+    }
+
+    .services h3 {
+        padding-top: 3rem;
+    }
+
+    .review-container {
+        flex-direction: column;
+        gap: 9rem;
+        align-items: center;
+    }
+
+    .extra {
+        gap: 1.5rem;
+    }
+
+    .extra div {
+        height: 166px;
+    }
+
+    /* About page */
+    /* Add this to your CSS file (e.g., /css/styles.css) */
+    .swap-container {
+        display: flex;
+        padding-bottom: 4rem;
+    }
+    .swap-container > div:first-child {
+        order: 2; /* moves the image to the right */
+    }
+    .swap-container > div:last-child {
+        order: 1; /* moves the text to the left */
+    }
+
+    #about-about {
+        gap: 2rem;
+    }
+
+    #about-about .container {
+        flex-direction: column;
+        gap: 6rem;
+    }
+
+    #about-about .title p {
+        text-align: start;
+    }
+
+    #about-about p {
+        width: 500px;
+    }
+
+    #vision-mission-values .container {
+        flex-direction: column;
+        gap: 6rem;
+    }
+
+    #vision-mission-values .container div {
+        width: 100%;
+        max-width: 400px;
+        height: 412px;
+    }
+
+    /* Clients page */
+    #our-clients {
+        flex-direction: column;
+        gap: 3rem;
+        /* text-align: center; */
+        padding-left: 5rem;
+    }
+
+    #our-clients p {
+        font-size: 30px;
+        width: 80%;
+    }
+
+    /* Career page */
+    #career-form {
+        flex-direction: column-reverse;
+        gap: 9rem;
+    }
+    #career-form h2, #career-form p {
+        max-width: 100%;
+    }
+
+    /* Contact page */
+    #contact-info .container {
+        flex-direction: column;
+        gap: 6rem;
+    }
+
+    .contact-details {
+        width: 383px;
+        height: 377px;
+    }
+    /* Serviecs */
+    #about-services {
+        align-items: center;
+        flex-direction: column-reverse;
+        gap: 8rem;
+    }
+
+    #about-services .text-card {
+        gap: 2rem;
+        width: 70%;
+        padding: 0px;
+    }
+
+    .services-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 6rem;
+    }
+
+    #engineering-design,
+    #procurement,
+    #procurement .container,
+    #technical-manpower, 
+    #construction,   
+    #construction .container,
+    #as-built,
+    #installation,
+    #installation .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 9rem;
+        padding: 0px;
+    }
+
+    #procurement .container :is(h2, p, li),
+    #technical-manpower :is(h2, p, ul),
+    #construction :is(h2, p),
+    #as-built :is(h2, p),
+    #installation {
+        padding-left: 5rem;
+    }
+
+    #procurement .title p,
+    #technical-manpower .title p,
+    #construction .swap-container .title p,
+    #as-built .title p,
+    #installation .title p {
+        padding-left: 0px;
+    }
+
+    #procurement .container p,
+    #technical-manpower p,
+    #construction .container p,
+    #as-built p,
+    #installation .container p {
+        width: 90%;
+        line-height: 1.7rem;
+    }
+
+    /* Contact- form */
+    .contact-form {
+        width: 80%;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        /* text-align: center; */
+        gap: 2rem;
+    }
+
+    .footer-logo p,
+    .footer-container > div:nth-child(4) p,
+    .footer-container div:nth-child(5) p {
+        max-width: 100%;
+    }
+
+    .footer-logo .logo {
+        margin: 0;
+    }
+
+    .footer-logo {
+        width: 100%;
+        align-items: start;
+    }
+
+    .footer-logo p {
+        width: 60%;
+        text-align: start;
+        padding-top: 2rem;
+        line-height: 1.3rem;
+    }
+}
+
+
+/* Media queries for screens up to 768px (Mobile) */
+@media (max-width: 768px) {
+    main {
+        gap: 10vh;
+        padding: 3rem 1.5rem;
+        gap: 9rem;
+    }
+
+    h1,
+    #contact .container h3,
+    #our-clients p,
+    #career-form h2,
+    #about-services h2 {
+        font-size: 20px;
+    }
+
+    h2, h3, h4, h5,
+    #projects h3,
+    .review-container :is(h2),
+        #vision-mission-values .container h3 {
+        font-size: 23px;
+    }
+
+    .title p,
+    #about-services .title p,
+    #procurement .swap-container .title p {
+        font-size: 12px;
+    }
+
+    p, main p, .services p, li,
+    .review-container :is(p, li),
+    .services a,
+    #projects li,
+    .career-form input[type="text"], 
+    .career-form input[type="email"], 
+    .career-form input[type="tel"], 
+    .career-form textarea,
+    .career-form button[type="submit"],
+    #about-services p,
+    #procurement .container p {
+        font-size: 14px;
+        line-height: 1.2rem;
+    }
+
+    #procurement .container p, 
+    #technical-manpower p, 
+    #construction .container p, 
+    #as-built p, 
+    #installation .container p {
+        line-height: 1.2rem;
+    }
+
+    button {
+        width: 90px;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    /* Navigation */
+    .main-menu {
+        display: none; /* Hide the main menu on mobile by default */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        background-color: var(--white);
+    }
+
+    .main-menu li {
+        width: 100%;
+        /* text-align: center; */
+        margin: 0;
+    }
+
+    /* Images */
+    .img-card {
+        height: 324px; /* Adjust height for smaller screens */
+        width: 300px; /* Adjust width for smaller screens */
+    }
+
+    .service-card {
+        width: 300px; /* Adjust width for smaller screens */
+    }
+
+    .gallery-container img {
+        height: 216px; /* Adjust height for smaller screens */
+        width: 284px; /* Adjust width for smaller screens */
+    }
+
+    .map {
+        height: 400px; /* Adjust height for smaller screens */
+        width: 100%; /* Adjust width for smaller screens */
+    }
+
+    /* You would need JavaScript to toggle a class to show/hide the menu,
+       or a CSS-only hamburger menu implementation. */
+
+    nav {
+        flex-direction: row;
+        align-items: center;
+    }
+    .logo {
+        width: 70px;
+    }
+
+    /* Homepage Sections */
+    #hero-homepage {
+        height: 45vh;
+        padding-left: 1rem;
+        padding-bottom: 2rem;
+        align-items: end;
+        padding-left: 1.7rem;
+        padding-right: 0px;
+    }
+
+    #hero-homepage h1, 
+    .review-container :is(h2, h3) {
+        font-size: 20px;
+        line-height: 1.6rem;
+        font-weight: 600;
+    }
+
+    .extra {
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    .extra div {
+        width: 179px;
+        height: 166px;
+    }
+
+    #hero-homepage p {
+        font-size: 14px;
+        line-height: 1.4rem;
+    }
+
+    #about-homepage {
+        gap: 7rem;
+    }
+
+    #about-homepage h2,
+    #about-about .title p {
+        text-align: center;
+    }
+
+    .about-homepage-text {
+        width: 95%;
+    }
+
+    .hero-homepage-btn {
+        display: flex;
+        flex-direction: row;
+        gap: 0.1rem;
+    }
+
+    #contact {
+        padding: 1rem;
+        height: 271px;
+    }
+
+    #contact .container h3{
+        line-height: 1.2rem;
+        font-size: 14px;
+        font-weight: 400;
+        padding-bottom: 1rem;
+    }
+
+    /* Hero pages */
+    #hero-about,
+    #hero-clients,
+    #hero-career,
+    #hero-service,
+    #hero-gallery,
+    #hero-Contact {
+        height: 163px;
+    }
+
+    /* About page */
+    #vision-mission-values .container div {
+        width: 297px;
+        height: 302px;
+    }
+
+    #about-about p {
+        width: 100%;
+        padding-left: 1rem;
+    }  
+     
+    /* clients */
+    #our-clients {
+        padding-left: 0px;
+    }
+
+    .project-hero {
+        height: 175px;
+    }
+
+    #projects h3 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .client-logo img,
+    .client-logo {
+        height: 193px; /* Adjust height for smaller screens */
+        width: 300px; /* Adjust width for smaller screens */
+    }
+
+    li svg {
+        width: 20px; /* Smaller icon size */
+        height: 14px; /* Smaller icon size */
+        margin-right: 8px; /* Space between icon and text */
+        margin-top: 4px; /* Align icon vertically with text */
+        flex-shrink: 0; /* Prevent icon from shrinking */
+    }
+
+    /* Services and gallery */
+    .services-container,
+    .gallery-container {
+        gap: 7rem;
+    }
+
+    .services {
+        width: 300px; /* Adjust width for smaller screens */
+    }
+
+    .services h3 {
+        font-size: 20px;
+    }
+
+    #certificates li {
+        width: 100%;
+    }
+
+    #certificates ul {
+        align-items: start;
+    }
+
+    /* Career Form */
+    #career-form {
+        gap: 7rem;
+        margin-bottom: 9rem;
+    }
+
+    #career-form h2 {
+        width: 70%;
+        padding-bottom: 3rem;
+    }
+    #career-form p {
+        width: 80%;
+        padding-bottom: 3rem;
+    }
+
+    .career-form {
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .career-form button[type="submit"] {
+        padding: 0px;
+    }
+
+    .career-form input[type="text"], 
+    .career-form input[type="email"], 
+    .career-form input[type="tel"], 
+    .career-form textarea {
+        padding: 0.75rem 1rem;
+    }
+
+    /* Services page */
+    #about-services .title p {
+        padding-bottom: 1rem;
+    }
+     
+    /* Services description */
+    #procurement .container :is(h2, p, li), 
+    #technical-manpower :is(h2, p, ul), 
+    #construction :is(h2, p), 
+    #as-built :is(h2, p), 
+    #installation {
+        padding-left: 1rem;
+    }
+
+    #engineering-design {
+        flex-direction: column-reverse;
+    }
+
+    #procurement .swap-container .title p {
+        padding-left: 0px
+    }
+
+    /* Contact page */
+    .contact-details {
+        width: 300px;
+        height: 297px;
+        justify-content: center;
+        padding-top: 0px;
+    }
+
+    #contact-form {
+        gap: 4rem;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form button[type="submit"] {
+        padding: 0px;
+    }
+
+    /* footer */
+    .footer-container {
+        padding: 1rem 0.5rem 0px 0.5rem;
+    }
+
+    .footer-container :is(p, li, a),
+    footer p {
+        font-size: 12px;
+        line-height: normal;
+    }
+
+    footer {
+        padding-bottom: 0px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
