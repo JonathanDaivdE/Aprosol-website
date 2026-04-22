@@ -443,7 +443,7 @@ span {
 #contact {
     display: flex;
     align-items:end;
-    background-image: url('assets/Home\ Page/contact-hero.webp');
+    background-image: url('../assets/Home\ Page/contact-hero.webp');
     background-size: cover;
     background-position: center;
     width: 100%;
